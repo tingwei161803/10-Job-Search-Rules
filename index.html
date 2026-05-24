@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>10 Job-Search Rules That Just Broke — Visual Summary</title>
+    <meta
+      name="description"
+      content="A visual summary of Nikhyl Singhal's essay on the ten career and job-search assumptions that AI has just shattered."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Instrument Serif"', "ui-serif", "Georgia", "serif"],
+              sans: ['"Inter"', "ui-sans-serif", "system-ui", "sans-serif"],
+              mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
+            },
+            colors: {
+              ink: "#0a0a0a",
+              paper: "#f6f3ec",
+              cream: "#efeae0",
+              flame: "#e2410b",
+              ember: "#f59e0b",
+              ash: "#4b4b48",
+            },
+            letterSpacing: { tightest: "-0.06em" },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #f6f3ec;
+        color: #0a0a0a;
+        font-family: "Inter", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      .display {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        line-height: 0.95;
+      }
+      /* paper grain */
+      .grain::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+        opacity: 0.6;
+      }
+      /* crack line that streaks down the page */
+      .crack-line {
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          rgba(226, 65, 11, 0.35) 8%,
+          rgba(10, 10, 10, 0.5) 60%,
+          transparent 100%
+        );
+      }
+      /* shattered title effect */
+      .shatter span {
+        display: inline-block;
+        transform-origin: center;
+        transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .shatter:hover span:nth-child(2n) {
+        transform: translateY(-6px) rotate(-3deg);
+      }
+      .shatter:hover span:nth-child(2n + 1) {
+        transform: translateY(4px) rotate(2deg);
+      }
+      /* number badge */
+      .badge {
+        font-variant-numeric: tabular-nums;
+      }
+      /* sticky underline link */
+      .uline {
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 1px;
+        transition: background-size 0.25s ease;
+      }
+      .uline:hover {
+        background-size: 100% 2px;
+      }
+      /* reveal on scroll */
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      /* old/new column accents */
+      .ribbon {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      /* strike-through line */
+      .strike {
+        position: relative;
+      }
+      .strike::after {
+        content: "";
+        position: absolute;
+        left: -4%;
+        right: -4%;
+        top: 52%;
+        height: 2px;
+        background: #e2410b;
+        transform: rotate(-1.2deg);
+      }
+      /* shimmering kicker dot */
+      @keyframes pulseDot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.85);
+        }
+      }
+      .dot {
+        animation: pulseDot 1.8s ease-in-out infinite;
+      }
+      /* table-of-contents pill */
+      .toc a {
+        display: inline-block;
+        padding: 4px 10px;
+        border: 1px solid rgba(10, 10, 10, 0.15);
+        border-radius: 999px;
+        font-size: 12px;
+        color: #0a0a0a;
+        transition: all 0.18s ease;
+        background: rgba(255, 255, 255, 0.4);
+      }
+      .toc a:hover {
+        background: #0a0a0a;
+        color: #f6f3ec;
+        border-color: #0a0a0a;
+      }
+      /* selection */
+      ::selection {
+        background: #0a0a0a;
+        color: #f6f3ec;
+      }
+    </style>
+  </head>
+  <body class="grain">
+    <!-- top status bar -->
+    <header
+      class="relative z-10 border-b border-ink/10 bg-paper/80 backdrop-blur"
+    >
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 text-[11px] uppercase tracking-[0.18em] text-ink/70"
+      >
+        <div class="flex items-center gap-2">
+          <span class="dot inline-block h-2 w-2 rounded-full bg-flame"></span>
+          <span>The Skip · Field Report</span>
+        </div>
+        <div class="hidden sm:block">Issue 042 · May 2026</div>
+        <a
+          href="https://theskip.substack.com/p/10-job-search-rules-that-just-broke"
+          target="_blank"
+          rel="noopener"
+          class="uline"
+          >Read original →</a
+        >
+      </div>
+    </header>
+
+    <!-- hero -->
+    <section class="relative z-10 mx-auto max-w-6xl px-6 pt-16 sm:pt-24">
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-9">
+          <p
+            class="ribbon mb-6 inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/40 px-3 py-1.5 text-ink/70"
+          >
+            <span class="dot inline-block h-1.5 w-1.5 rounded-full bg-flame"></span>
+            A visual reading of the essay
+          </p>
+
+          <h1
+            class="display shatter text-[14vw] leading-[0.88] sm:text-[10vw] lg:text-[9rem]"
+          >
+            <span>10</span>
+            <span class="text-flame">Job&#8209;Search</span>
+            <span>Rules</span><br />
+            <span class="italic">that&nbsp;just</span>
+            <span class="relative inline-block">
+              broke
+              <svg
+                class="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 240 16"
+                fill="none"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 8 Q 30 2 60 9 T 120 8 T 180 9 T 238 7"
+                  stroke="#e2410b"
+                  stroke-width="3"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            <span>.</span>
+          </h1>
+
+          <p
+            class="mt-10 max-w-2xl text-lg leading-relaxed text-ink/80 sm:text-xl"
+          >
+            A field summary of Nikhyl Singhal's essay on how AI quietly
+            rewrote the playbook for senior tech careers — what used to be
+            true, what is true now, and the small adjustments that change
+            everything.
+          </p>
+
+          <div
+            class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink/70"
+          >
+            <div class="flex items-center gap-2">
+              <span class="ribbon text-ink/50">Original by</span>
+              <span class="font-medium text-ink">Nikhyl Singhal</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="ribbon text-ink/50">Published</span>
+              <span class="font-medium text-ink">May 20, 2026</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="ribbon text-ink/50">Read time</span>
+              <span class="font-medium text-ink">~6 min</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="col-span-12 lg:col-span-3 lg:pt-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-5">
+            <p class="ribbon mb-3 text-ink/60">The thesis</p>
+            <p class="text-sm leading-relaxed text-ink/85">
+              The career assumptions senior operators have leaned on for a
+              decade — about onboarding, titles, location, and identity — were
+              quietly invalidated. The job hunt that used to work no longer
+              does. The one that works now looks strange until you try it.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <!-- toc -->
+      <nav class="toc mt-16 flex flex-wrap gap-2" aria-label="Rules">
+        <a href="#rule-1">01 · Onboarding</a>
+        <a href="#rule-2">02 · Founding</a>
+        <a href="#rule-3">03 · Remote</a>
+        <a href="#rule-4">04 · AI filter</a>
+        <a href="#rule-5">05 · Titles</a>
+        <a href="#rule-6">06 · Level</a>
+        <a href="#rule-7">07 · Resumes</a>
+        <a href="#rule-8">08 · Training</a>
+        <a href="#rule-9">09 · Boundaries</a>
+        <a href="#rule-10">10 · Identity</a>
+      </nav>
+    </section>
+
+    <!-- crack divider -->
+    <div class="relative mx-auto mt-24 max-w-6xl px-6">
+      <div class="relative h-24">
+        <div
+          class="crack-line absolute left-1/2 top-0 h-full w-px -translate-x-1/2"
+        ></div>
+        <div
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-ink/20 bg-paper px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-ink/60"
+        >
+          The Ten Rules
+        </div>
+      </div>
+    </div>
+
+    <!-- rules -->
+    <main class="relative z-10 mx-auto max-w-6xl space-y-28 px-6 pb-32">
+      <!-- Each rule is rendered as a comparison card -->
+      <article id="rule-1" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display badge text-7xl text-flame">01</span>
+          <h2 class="display text-3xl sm:text-4xl">
+            Onboarding is a year of struggle.
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">Broken rule</p>
+            <p class="strike text-lg text-ink/80">
+              Stepping into a new senior role means six to twelve months of
+              context gaps and quiet imposter syndrome.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">Working rule</p>
+            <p class="text-lg leading-snug">
+              AI agents compress onboarding from months to days. Context that
+              used to live in long lunches now lives in a sidebar.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">Why →</span>
+          Modern company systems surface products, people, and institutional
+          memory on demand. The biggest tax of a new role — figuring out who
+          and what — is mostly paid by software now.
+        </p>
+      </article>
+
+      <article id="rule-2" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display badge text-7xl text-flame">02</span>
+          <h2 class="display text-3xl sm:text-4xl">
+            Founding is for risk‑lovers only.
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">Broken rule</p>
+            <p class="strike text-lg text-ink/80">
+              Starting a company is a binary, late‑career capstone reserved
+              for born entrepreneurs.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">Working rule</p>
+            <p class="text-lg leading-snug">
+              Founding is now a viable mid‑career move — fast, enjoyable, and
+              skill‑building even when the venture itself doesn't survive.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">Why →</span>
+          Product validation cycles shrank from years to quarters. The
+          downside is bounded; the personal upside compounds whether you
+          succeed or pivot.
+        </p>
+      </article>
+
+      <article id="rule-3" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display badge text-7xl text-flame">03</span>
+          <h2 class="display text-3xl sm:text-4xl">
+            Every interesting AI job is in San Francisco.
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">Broken rule</p>
+            <p class="strike text-lg text-ink/80">
+              The only hot opportunities are at frontier labs, and all of them
+              demand relocation.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">Working rule</p>
+            <p class="text-lg leading-snug">
+              Established hot companies are now genuinely remote‑friendly.
+              Frontier labs remain location‑locked — but they're not the only
+              game.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">Why →</span>
+          The "AI opportunity" surface widened far past brand‑name labs.
+          Plenty of mature companies are doing the most interesting AI work
+          and will let you do it from wherever you live.
+        </p>
+      </article>
+
+      <article id="rule-4" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display badge text-7xl text-flame">04</span>
+          <h2 class="display text-3xl sm:text-4xl">
+            "AI company" must be a hard filter.
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">Broken rule</p>
+            <p class="strike text-lg text-ink/80">
+              To stay relevant you must work somewhere whose product
+              identity is "AI‑first."
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">Working rule</p>
+            <p class="text-lg leading-snug">
+              Almost every growing company is already heading toward AI.
+              Filter on people, problem, and trajectory instead.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">Why →</span>
+          AI adoption is now a baseline strategic posture, not an
+          industry. Using "AI" as a filter screens out most of the good
+          options without screening anything in.
+        </p>
+      </article>
+
+      <article id="rule-5" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display badge text-7xl text-flame">05</span>
+          <h2 class="display text-3xl sm:text-4xl">
+            Your title opens the door.
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">Broken rule</p>
+            <p class="strike text-lg text-ink/80">
+              Brand‑name companies and senior titles are what generates
+              interview access.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">Working rule</p>
+            <p class="text-lg leading-snug">
+              Concrete artifacts beat credentials. What you can show — and
+              talk about with specificity — opens more doors than what's on
+              your resume header.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">Why →</span>
+          Interviewers test for fluency, not pedigree. Specificity about a
+          real project signals expertise in a way a job title cannot.
+        </p>
+      </article>
+
+      <article id="rule-6" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display badge text-7xl text-flame">06</span>
+          <h2 class="display text-3xl sm:text-4xl">
+            Only interview for your level.
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">Broken rule</p>
+            <p class="strike text-lg text-ink/80">
+              Protecting your career level is the most important
+              constraint during a transition.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">Working rule</p>
+            <p class="text-lg leading-snug">
+              Take the interview at the company you want, even if it sits a
+              rung below. Quality of company compounds faster than title
+              recovery.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">Why →</span>
+          A volatile market punishes rigidity. The right environment will
+          re‑level you in a year; the wrong one will leave the title
+          intact and the resume stalling.
+        </p>
+      </article>
+
+      <article id="rule-7" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display badge text-7xl text-flame">07</span>
+          <h2 class="display text-3xl sm:text-4xl">
+            A non‑traditional resume needs explaining away.
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">Broken rule</p>
+            <p class="strike text-lg text-ink/80">
+              An unconventional background is a liability to defend
+              against.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">Working rule</p>
+            <p class="text-lg leading-snug">
+              Treat it as a teaching moment. Candidates who can bridge their
+              past to the company's present run the conversation instead of
+              fitting a pattern.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">Why →</span>
+          Pattern‑matching is what loses. Narrative — the ability to make a
+          non‑obvious resume make sense — is itself a leadership signal.
+        </p>
+      </article>
+
+      <article id="rule-8" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display badge text-7xl text-flame">08</span>
+          <h2 class="display text-3xl sm:text-4xl">
+            You need a formal course to learn AI.
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">Broken rule</p>
+            <p class="strike text-lg text-ink/80">
+              Catch up through structured curricula, certifications, and
+              tutorials.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">Working rule</p>
+            <p class="text-lg leading-snug">
+              Build something real. The models teach you while you use them
+              — and the fluency that produces is impossible to fake.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">Why →</span>
+          Hands‑on context is now the cheapest thing to acquire and the
+          hardest thing to bluff. A working prototype beats a stack of
+          certificates in any room that matters.
+        </p>
+      </article>
+
+      <article id="rule-9" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display badge text-7xl text-flame">09</span>
+          <h2 class="display text-3xl sm:text-4xl">
+            Discuss boundaries in the abstract.
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">Broken rule</p>
+            <p class="strike text-lg text-ink/80">
+              A company's stated flexibility policy predicts how flexible
+              it will actually be.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">Working rule</p>
+            <p class="text-lg leading-snug">
+              Surface your constraints early and watch the behavior — not the
+              brochure. Real support shows up in calendars and small
+              moments, not in policy language.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">Why →</span>
+          What the leadership team has internalized matters more than what
+          the careers page promises. You'll learn more from one scheduling
+          conflict than a whole interview loop of talking points.
+        </p>
+      </article>
+
+      <article id="rule-10" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display badge text-7xl text-flame">10</span>
+          <h2 class="display text-3xl sm:text-4xl">
+            Protect your professional identity.
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">Broken rule</p>
+            <p class="strike text-lg text-ink/80">
+              Your career identity should stay consistent and defensible
+              across roles.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">Working rule</p>
+            <p class="text-lg leading-snug">
+              Hold the identity loosely. Let the role reshape under you;
+              the market is going to reformat it whether you cooperate or
+              not.
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-relaxed text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">Why →</span>
+          Rigidity is the only thing the next cycle reliably punishes.
+          People who stay curious about who they're becoming have a much
+          better time than people defending who they used to be.
+        </p>
+      </article>
+    </main>
+
+    <!-- closing -->
+    <section class="relative z-10 border-t border-ink/10 bg-cream">
+      <div class="mx-auto max-w-6xl px-6 py-24">
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-7">
+            <p class="ribbon mb-4 text-ink/60">In a sentence</p>
+            <p class="display text-4xl leading-tight sm:text-5xl">
+              The job that used to take a year of preparation now rewards the
+              person who shows up &mdash;
+              <span class="italic text-flame">with something to show</span>
+              &mdash; in a week.
+            </p>
+          </div>
+          <div class="lg:col-span-5 lg:pl-10">
+            <p class="ribbon mb-3 text-ink/60">Go deeper</p>
+            <p class="text-base leading-relaxed text-ink/80">
+              This page is a visual summary. The full essay covers the
+              nuances — and several stories — that don't fit in cards.
+            </p>
+            <a
+              href="https://theskip.substack.com/p/10-job-search-rules-that-just-broke"
+              target="_blank"
+              rel="noopener"
+              class="mt-6 inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-flame"
+            >
+              Read the original on The Skip
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+            <p class="mt-6 text-xs text-ink/50">
+              Original essay by Nikhyl Singhal, published in
+              <span class="italic">The Skip</span>, May 2026. This page is an
+              unofficial reader's summary.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="relative z-10 border-t border-ink/10 bg-ink py-10 text-paper">
+      <div
+        class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-3 px-6 text-xs text-paper/70 sm:flex-row sm:items-center"
+      >
+        <div>
+          Built as a visual reading exercise &middot; not affiliated with the
+          author or The Skip
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="ribbon text-paper/40">v1.0</span>
+          <span class="ribbon text-paper/40">© 2026</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Wrap each headline word in a span for the shatter effect
+      document.querySelectorAll(".shatter").forEach((el) => {
+        // already spanned in markup — skip
+      });
+
+      // Intersection observer reveal
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach((n) => io.observe(n));
+    </script>
+  </body>
+</html>
