@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>剛剛失效的 10 條求職守則 — 中文導讀</title>
+    <meta
+      name="description"
+      content="Nikhyl Singhal 文章〈10 Job-Search Rules That Just Broke〉的中文導讀。AI 改寫了資深科技人的求職劇本——舊規則為何失效,新規則該怎麼用。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+TC:wght@300;400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: [
+                '"Instrument Serif"',
+                '"Noto Serif TC"',
+                "ui-serif",
+                "Georgia",
+                "serif",
+              ],
+              tc: ['"Noto Serif TC"', '"Instrument Serif"', "serif"],
+              sans: [
+                '"Inter"',
+                '"Noto Sans TC"',
+                "ui-sans-serif",
+                "system-ui",
+                "sans-serif",
+              ],
+              mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
+            },
+            colors: {
+              ink: "#0a0a0a",
+              paper: "#f6f3ec",
+              cream: "#efeae0",
+              flame: "#e2410b",
+              ember: "#f59e0b",
+              ash: "#4b4b48",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #f6f3ec;
+        color: #0a0a0a;
+        font-family: "Inter", "Noto Sans TC", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      .display-tc {
+        font-family: "Noto Serif TC", "Instrument Serif", serif;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        line-height: 1.1;
+      }
+      .display-en {
+        font-family: "Instrument Serif", "Noto Serif TC", serif;
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        line-height: 0.95;
+      }
+      /* paper grain */
+      .grain::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+        opacity: 0.6;
+      }
+      .crack-line {
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          rgba(226, 65, 11, 0.35) 8%,
+          rgba(10, 10, 10, 0.5) 60%,
+          transparent 100%
+        );
+      }
+      .badge {
+        font-variant-numeric: tabular-nums;
+      }
+      .uline {
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 1px;
+        transition: background-size 0.25s ease;
+      }
+      .uline:hover {
+        background-size: 100% 2px;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      .ribbon {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      .strike {
+        position: relative;
+      }
+      .strike::after {
+        content: "";
+        position: absolute;
+        left: -4%;
+        right: -4%;
+        top: 52%;
+        height: 2px;
+        background: #e2410b;
+        transform: rotate(-1.2deg);
+      }
+      @keyframes pulseDot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.85);
+        }
+      }
+      .dot {
+        animation: pulseDot 1.8s ease-in-out infinite;
+      }
+      .toc a {
+        display: inline-block;
+        padding: 4px 12px;
+        border: 1px solid rgba(10, 10, 10, 0.15);
+        border-radius: 999px;
+        font-size: 13px;
+        color: #0a0a0a;
+        transition: all 0.18s ease;
+        background: rgba(255, 255, 255, 0.4);
+      }
+      .toc a:hover {
+        background: #0a0a0a;
+        color: #f6f3ec;
+        border-color: #0a0a0a;
+      }
+      ::selection {
+        background: #0a0a0a;
+        color: #f6f3ec;
+      }
+    </style>
+  </head>
+  <body class="grain">
+    <!-- top status bar -->
+    <header
+      class="relative z-10 border-b border-ink/10 bg-paper/80 backdrop-blur"
+    >
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 text-[11px] uppercase tracking-[0.18em] text-ink/70"
+      >
+        <div class="flex items-center gap-2">
+          <span class="dot inline-block h-2 w-2 rounded-full bg-flame"></span>
+          <span>The Skip · 田野筆記</span>
+        </div>
+        <div class="hidden sm:block">第 042 期 · 2026 年 5 月</div>
+        <div class="flex items-center gap-4">
+          <nav
+            class="flex items-center gap-1 rounded-full border border-ink/15 bg-white/40 p-0.5 text-[10px] uppercase tracking-[0.16em]"
+            aria-label="語言"
+          >
+            <a
+              href="../"
+              class="rounded-full px-2.5 py-1 text-ink/70 transition hover:text-ink"
+              >EN</a
+            >
+            <span class="rounded-full bg-ink px-2.5 py-1 text-paper">繁中</span>
+          </nav>
+          <a
+            href="https://theskip.substack.com/p/10-job-search-rules-that-just-broke"
+            target="_blank"
+            rel="noopener"
+            class="uline"
+            >閱讀原文 →</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- hero -->
+    <section class="relative z-10 mx-auto max-w-6xl px-6 pt-16 sm:pt-24">
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-9">
+          <p
+            class="ribbon mb-6 inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/40 px-3 py-1.5 text-ink/70"
+          >
+            <span class="dot inline-block h-1.5 w-1.5 rounded-full bg-flame"></span>
+            一篇文章的視覺導讀
+          </p>
+
+          <h1 class="display-tc text-[12vw] leading-[1.05] sm:text-[8vw] lg:text-[7.2rem]">
+            <span class="display-en text-flame">10</span> 條
+            <span class="text-flame">求職守則</span><br />
+            <span class="italic">剛剛</span>
+            <span class="relative inline-block">
+              失效了
+              <svg
+                class="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 240 16"
+                fill="none"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 8 Q 30 2 60 9 T 120 8 T 180 9 T 238 7"
+                  stroke="#e2410b"
+                  stroke-width="3"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            。
+          </h1>
+
+          <p
+            class="mt-10 max-w-2xl text-lg leading-loose text-ink/80 sm:text-xl"
+          >
+            這篇是 Nikhyl Singhal 文章的中文導讀。AI 悄悄改寫了資深科技工作者的職涯腳本——以前對的事情現在不一定對,以前不該做的事情現在反而是優勢。整理成 10 條對照,讓你一眼看出新舊差異。
+          </p>
+
+          <div
+            class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink/70"
+          >
+            <div class="flex items-center gap-2">
+              <span class="ribbon text-ink/50">原作者</span>
+              <span class="font-medium text-ink">Nikhyl Singhal</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="ribbon text-ink/50">原文發布</span>
+              <span class="font-medium text-ink">2026 年 5 月 20 日</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="ribbon text-ink/50">閱讀時間</span>
+              <span class="font-medium text-ink">約 6 分鐘</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="col-span-12 lg:col-span-3 lg:pt-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-5">
+            <p class="ribbon mb-3 text-ink/60">核心觀點</p>
+            <p class="text-sm leading-loose text-ink/85">
+              過去十年資深工作者賴以維生的職涯假設——關於到職磨合、頭銜、地點與身份——已經被靜悄悄推翻。以前那套求職方法不再有效,新的方法乍看奇怪,但試了就知道。
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <!-- toc -->
+      <nav class="toc mt-16 flex flex-wrap gap-2" aria-label="十條守則">
+        <a href="#rule-1">01 · 到職磨合</a>
+        <a href="#rule-2">02 · 創業</a>
+        <a href="#rule-3">03 · 遠端工作</a>
+        <a href="#rule-4">04 · AI 篩選</a>
+        <a href="#rule-5">05 · 頭銜</a>
+        <a href="#rule-6">06 · 職等</a>
+        <a href="#rule-7">07 · 履歷</a>
+        <a href="#rule-8">08 · 學習</a>
+        <a href="#rule-9">09 · 邊界</a>
+        <a href="#rule-10">10 · 身份</a>
+      </nav>
+    </section>
+
+    <!-- crack divider -->
+    <div class="relative mx-auto mt-24 max-w-6xl px-6">
+      <div class="relative h-24">
+        <div
+          class="crack-line absolute left-1/2 top-0 h-full w-px -translate-x-1/2"
+        ></div>
+        <div
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-ink/20 bg-paper px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-ink/60"
+        >
+          十條守則
+        </div>
+      </div>
+    </div>
+
+    <!-- rules -->
+    <main class="relative z-10 mx-auto max-w-6xl space-y-28 px-6 pb-32">
+      <article id="rule-1" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display-en badge text-7xl text-flame">01</span>
+          <h2 class="display-tc text-3xl sm:text-4xl">
+            到職就是要熬一整年。
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">舊規則</p>
+            <p class="strike text-lg leading-relaxed text-ink/80">
+              接下資深角色後,前六到十二個月都在補上下文、跟冒牌者症候群搏鬥。
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">新規則</p>
+            <p class="text-lg leading-relaxed">
+              AI 代理把磨合期從幾個月壓到幾天。以前需要在午餐桌上慢慢撈的資訊,現在從側邊欄就拿得到。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-loose text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">為什麼 →</span>
+          現在公司內部系統會即時提供產品、人、機構記憶。新工作最貴的成本——搞清楚「誰」跟「什麼」——大部分都被軟體吃掉了。
+        </p>
+      </article>
+
+      <article id="rule-2" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display-en badge text-7xl text-flame">02</span>
+          <h2 class="display-tc text-3xl sm:text-4xl">
+            創業是愛冒險者的專利。
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">舊規則</p>
+            <p class="strike text-lg leading-relaxed text-ink/80">
+              創業是高風險的職涯壓軸,只屬於天生的創業家。
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">新規則</p>
+            <p class="text-lg leading-relaxed">
+              創業變成中期職涯的合理選項。即使這次失敗,過程本身就很快、很有趣、能逼出技能。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-loose text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">為什麼 →</span>
+          產品驗證週期從幾年縮到幾季。下檔被壓縮,個人成長卻不論成敗都會複利累積。
+        </p>
+      </article>
+
+      <article id="rule-3" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display-en badge text-7xl text-flame">03</span>
+          <h2 class="display-tc text-3xl sm:text-4xl">
+            有趣的 AI 工作都在舊金山。
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">舊規則</p>
+            <p class="strike text-lg leading-relaxed text-ink/80">
+              機會只在前沿實驗室,而且都要搬到舊金山。
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">新規則</p>
+            <p class="text-lg leading-relaxed">
+              已經站穩腳步的熱門公司,現在是真心開放遠端;前沿實驗室還是綁地點——但它們不是唯一選擇。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-loose text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">為什麼 →</span>
+          「AI 機會」這片光譜已經遠遠超出招牌實驗室。許多成熟公司正在做最有趣的 AI 工作,而且讓你從任何地方做。
+        </p>
+      </article>
+
+      <article id="rule-4" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display-en badge text-7xl text-flame">04</span>
+          <h2 class="display-tc text-3xl sm:text-4xl">
+            「AI 公司」必須是硬性條件。
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">舊規則</p>
+            <p class="strike text-lg leading-relaxed text-ink/80">
+              想保持競爭力,必須加入一家產品定位是「AI 優先」的公司。
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">新規則</p>
+            <p class="text-lg leading-relaxed">
+              幾乎所有在成長的公司都在走向 AI。改用人、題目、軌跡當作篩選條件吧。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-loose text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">為什麼 →</span>
+          AI 採用已經是基本戰略姿態,不是一個產業。把「AI」當篩選器,只會把好機會擋在門外,卻篩不出真正想要的東西。
+        </p>
+      </article>
+
+      <article id="rule-5" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display-en badge text-7xl text-flame">05</span>
+          <h2 class="display-tc text-3xl sm:text-4xl">
+            頭銜替你打開大門。
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">舊規則</p>
+            <p class="strike text-lg leading-relaxed text-ink/80">
+              大公司招牌與資深頭銜,才是換取面試機會的籌碼。
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">新規則</p>
+            <p class="text-lg leading-relaxed">
+              具體作品贏過資歷。能拿出來、能說得出細節的東西,比履歷抬頭打開更多扇門。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-loose text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">為什麼 →</span>
+          面試官在測「對這件事有多熟」,不是在測門面。對某個真實專案的具體描述,能傳達頭銜傳達不了的專業度。
+        </p>
+      </article>
+
+      <article id="rule-6" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display-en badge text-7xl text-flame">06</span>
+          <h2 class="display-tc text-3xl sm:text-4xl">
+            只面試跟自己等級相符的職缺。
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">舊規則</p>
+            <p class="strike text-lg leading-relaxed text-ink/80">
+              轉職時最重要的就是保住職等。
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">新規則</p>
+            <p class="text-lg leading-relaxed">
+              想加入的公司就去面,即使位置比你現在的等級低一階。公司品質複利得比頭銜還快。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-loose text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">為什麼 →</span>
+          動盪市場最會懲罰僵硬。對的環境會在一年內幫你補回職等;錯的環境則是頭銜還在、履歷停滯。
+        </p>
+      </article>
+
+      <article id="rule-7" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display-en badge text-7xl text-flame">07</span>
+          <h2 class="display-tc text-3xl sm:text-4xl">
+            非典型履歷需要解釋。
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">舊規則</p>
+            <p class="strike text-lg leading-relaxed text-ink/80">
+              不尋常的背景是包袱,要花力氣防守。
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">新規則</p>
+            <p class="text-lg leading-relaxed">
+              把它變成教學時刻。能把自己的過去連到對方現在需要的人,你就在主導對話,而不是在湊符號。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-loose text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">為什麼 →</span>
+          符號比對才是落敗的方式。能把一段不直觀的履歷講成故事,這個能力本身就是一種領導力訊號。
+        </p>
+      </article>
+
+      <article id="rule-8" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display-en badge text-7xl text-flame">08</span>
+          <h2 class="display-tc text-3xl sm:text-4xl">
+            學 AI 要靠正規課程。
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">舊規則</p>
+            <p class="strike text-lg leading-relaxed text-ink/80">
+              透過結構化課程、認證、教學文件慢慢補齊。
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">新規則</p>
+            <p class="text-lg leading-relaxed">
+              直接做一個東西。模型會在你使用的過程中教你——那種熟練度,沒法假裝。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-loose text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">為什麼 →</span>
+          動手經驗現在是最便宜取得、最難偽造的東西。在任何有重量的會議裡,一個能跑的原型都贏過一疊證照。
+        </p>
+      </article>
+
+      <article id="rule-9" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display-en badge text-7xl text-flame">09</span>
+          <h2 class="display-tc text-3xl sm:text-4xl">
+            邊界用抽象的方式談。
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">舊規則</p>
+            <p class="strike text-lg leading-relaxed text-ink/80">
+              公司聲稱的彈性政策,大致預測了實際上會給多少彈性。
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">新規則</p>
+            <p class="text-lg leading-relaxed">
+              早點把你的限制攤開,看對方的「行為」——不是看小冊子。真正的支持,藏在行事曆與小細節裡,不在政策語言裡。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-loose text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">為什麼 →</span>
+          公司高層內化了什麼,比 careers 頁面寫了什麼更重要。一次行程衝突教你的事,比一整輪面試的場面話還多。
+        </p>
+      </article>
+
+      <article id="rule-10" class="reveal">
+        <header class="mb-6 flex items-baseline gap-6">
+          <span class="display-en badge text-7xl text-flame">10</span>
+          <h2 class="display-tc text-3xl sm:text-4xl">
+            守住你的職業身份。
+          </h2>
+        </header>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-ink/10 bg-white/50 p-7">
+            <p class="ribbon mb-3 text-flame">舊規則</p>
+            <p class="strike text-lg leading-relaxed text-ink/80">
+              職涯身份應該前後一致、能站得住腳。
+            </p>
+          </div>
+          <div class="rounded-2xl border border-ink bg-ink p-7 text-paper">
+            <p class="ribbon mb-3 text-ember">新規則</p>
+            <p class="text-lg leading-relaxed">
+              身份握得鬆一點。讓角色在你身上重塑——反正市場會重新格式化它,不管你願不願意配合。
+            </p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-3xl text-sm leading-loose text-ink/70">
+          <span class="ribbon mr-2 text-ink/50">為什麼 →</span>
+          下一個週期裡,唯一被穩定懲罰的就是僵硬。對自己「正在變成什麼」保持好奇的人,日子過得比守著「曾經是誰」的人輕鬆許多。
+        </p>
+      </article>
+    </main>
+
+    <!-- closing -->
+    <section class="relative z-10 border-t border-ink/10 bg-cream">
+      <div class="mx-auto max-w-6xl px-6 py-24">
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-7">
+            <p class="ribbon mb-4 text-ink/60">一句話總結</p>
+            <p class="display-tc text-3xl leading-snug sm:text-4xl">
+              以前要花一年準備的工作,現在獎勵的是那種一個禮拜內就出現——
+              <span class="italic text-flame">而且手上拿著東西</span>——的人。
+            </p>
+          </div>
+          <div class="lg:col-span-5 lg:pl-10">
+            <p class="ribbon mb-3 text-ink/60">深入閱讀</p>
+            <p class="text-base leading-loose text-ink/80">
+              這頁是視覺導讀。原文還有許多細節與故事,是卡片裝不下的。
+            </p>
+            <a
+              href="https://theskip.substack.com/p/10-job-search-rules-that-just-broke"
+              target="_blank"
+              rel="noopener"
+              class="mt-6 inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-flame"
+            >
+              在 The Skip 閱讀原文
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+            <p class="mt-6 text-xs text-ink/50">
+              原文作者 Nikhyl Singhal,發表於 <span class="italic">The Skip</span>,2026 年 5 月。本頁為非官方讀者導讀。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="relative z-10 border-t border-ink/10 bg-ink py-10 text-paper">
+      <div
+        class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-3 px-6 text-xs text-paper/70 sm:flex-row sm:items-center"
+      >
+        <div>
+          製作為視覺閱讀練習 &middot; 與原作者或 The Skip 無從屬關係
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="ribbon text-paper/40">v1.0</span>
+          <span class="ribbon text-paper/40">© 2026</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach((n) => io.observe(n));
+    </script>
+  </body>
+</html>
