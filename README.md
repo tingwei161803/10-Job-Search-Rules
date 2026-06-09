@@ -4,12 +4,12 @@ A bilingual, single-page visual summary of Nikhyl Singhal's essay
 [**10 Job-Search Rules That Just Broke**](https://theskip.substack.com/p/10-job-search-rules-that-just-broke)
 (*The Skip*, May 2026), built as an editorial reading exercise.
 
-**🌐 Live site:** <https://tingwei161803.github.io/10-Job-Search-Rules/>
+**🌐 Live site:** <https://10-job-search-rules.peteraim.com/>
 
 | | URL |
 | --- | --- |
-| English edition | <https://tingwei161803.github.io/10-Job-Search-Rules/> |
-| 繁體中文 edition | <https://tingwei161803.github.io/10-Job-Search-Rules/zh-Hant/> |
+| English edition | <https://10-job-search-rules.peteraim.com/> |
+| 繁體中文 edition | <https://10-job-search-rules.peteraim.com/zh-Hant/> |
 
 [繁體中文 README →](./README-ZH.md)
 
